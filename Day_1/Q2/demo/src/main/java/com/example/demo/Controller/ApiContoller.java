@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class ApiContoller {
     @GetMapping("/StudentName")
-    public String Name(@RequestParam(name = "id") String name) {
+    public String Name(@RequestParam(value = "name") String name) {
         return "Welcome " + name + " !";
     }
 

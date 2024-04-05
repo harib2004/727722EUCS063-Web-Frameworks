@@ -10,7 +10,7 @@ import com.example.demo.Config.AppConfig;
 public class ApiController {
     private final AppConfig ac;
 
-    @Autowired
+    // @Autowired
     public ApiController(AppConfig ac) {
         this.ac = ac;
     }

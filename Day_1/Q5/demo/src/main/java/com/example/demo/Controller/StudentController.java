@@ -14,8 +14,8 @@ public class StudentController {
     public List<Student> getStudents() {
         List<Student> students = new ArrayList<>();
         Student obj = new Student();
-        obj.setStudentName("John");
-        obj.setMessage("Welcome, John!");
+        obj.setStudentName("HB");
+        obj.setMessage("Welcome, HB!");
         students.add(obj);
         return students;
     }
