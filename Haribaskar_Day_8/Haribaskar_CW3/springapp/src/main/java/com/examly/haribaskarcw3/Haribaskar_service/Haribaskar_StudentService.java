@@ -1,19 +1,19 @@
-package com.examly.springapp.service;
+package com.examly.haribaskarcw3.Haribaskar_service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examly.springapp.model.Student;
-import com.examly.springapp.repository.StudentRepo;
+import com.examly.haribaskarcw3.Haribaskar_model.Haribaskar_Student;
+import com.examly.haribaskarcw3.Haribaskar_repository.Haribaskar_StudentRepo;
 
 @Service
-public class StudentService {
+public class Haribaskar_StudentService {
     @Autowired
-    private StudentRepo studentRepo;
+    private Haribaskar_StudentRepo studentRepo;
 
-    public boolean post(Student student) {
+    public boolean post(Haribaskar_Student student) {
         try {
             studentRepo.save(student);
             return true;
@@ -22,11 +22,11 @@ public class StudentService {
         }
     }
 
-    public List<Student> start(int mark) {
+    public List<Haribaskar_Student> start(int mark) {
         return studentRepo.findByMarksGreaterThan(mark);
     }
 
-    public List<Student> end(int mark) {
+    public List<Haribaskar_Student> end(int mark) {
         return studentRepo.findByMarksLessThan(mark);
     }
 

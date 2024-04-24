@@ -1,19 +1,19 @@
-package com.examly.springapp.model;
+package com.examly.haribaskarcw3.Haribaskar_model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Student {
+public class Haribaskar_Student {
     @Id
     private long id;
     private String name;
     private int marks;
 
-    public Student() {
+    public Haribaskar_Student() {
     }
 
-    public Student(long id, String name, int marks) {
+    public Haribaskar_Student(long id, String name, int marks) {
         this.id = id;
         this.name = name;
         this.marks = marks;
