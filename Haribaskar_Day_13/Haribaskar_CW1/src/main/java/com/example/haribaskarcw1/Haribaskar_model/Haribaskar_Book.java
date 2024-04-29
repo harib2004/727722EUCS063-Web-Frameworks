@@ -1,4 +1,4 @@
-package com.example.q1.model;
+package com.example.haribaskarcw1.Haribaskar_model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Transactional
-public class Book {
+public class Haribaskar_Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,6 +32,6 @@ public class Book {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     @JsonBackReference
-    private Author author;
+    private Haribaskar_Author author;
 
 }

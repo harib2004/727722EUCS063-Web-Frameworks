@@ -1,4 +1,4 @@
-package com.example.q1.model;
+package com.example.haribaskarcw1.Haribaskar_model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Transactional
-public class Author {
+public class Haribaskar_Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,7 +33,7 @@ public class Author {
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Book> books = new ArrayList<>();
+    private List<Haribaskar_Book> books = new ArrayList<>();
 
     // Getters and setters
 }

@@ -1,4 +1,4 @@
-package com.example.q1.controller;
+package com.example.haribaskarcw1.Haribaskar_controller;
 
 import java.util.List;
 
@@ -13,32 +13,32 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.q1.model.Author;
-import com.example.q1.model.Book;
-import com.example.q1.service.AuthorService;
-import com.example.q1.service.BookService;
+import com.example.haribaskarcw1.Haribaskar_model.Haribaskar_Author;
+import com.example.haribaskarcw1.Haribaskar_model.Haribaskar_Book;
+import com.example.haribaskarcw1.Haribaskar_service.Haribaskar_AuthorService;
+import com.example.haribaskarcw1.Haribaskar_service.BookService;
 
 @RestController
-public class AuthorController {
+public class Haribaskar_AuthorController {
     @Autowired
-    private AuthorService authorService;
+    private Haribaskar_AuthorService authorService;
 @Autowired
 private BookService bookService;
     @PostMapping("/author")
-    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
-        Author savedAuthor = authorService.saveAuthor(author);
+    public ResponseEntity<Haribaskar_Author> createAuthor(@RequestBody Haribaskar_Author author) {
+        Haribaskar_Author savedAuthor = authorService.saveAuthor(author);
         return new ResponseEntity<>(savedAuthor, HttpStatus.CREATED);
     }
 
     @PostMapping("/book/author/{authorId}")
-    public ResponseEntity<Book> createBookForAuthor(@PathVariable Long authorId, @RequestBody Book book) {
-        Book savedBook = bookService.saveBook(authorId, book);
+    public ResponseEntity<Haribaskar_Book> createBookForAuthor(@PathVariable Long authorId, @RequestBody Haribaskar_Book book) {
+        Haribaskar_Book savedBook = bookService.saveBook(authorId, book);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
 
     @GetMapping("/author/{authorId}")
-    public ResponseEntity<Author> getAuthorById(@PathVariable Long authorId) {
-        Author author = authorService.getAuthorById(authorId);
+    public ResponseEntity<Haribaskar_Author> getAuthorById(@PathVariable Long authorId) {
+        Haribaskar_Author author = authorService.getAuthorById(authorId);
         if (author != null) {
             return new ResponseEntity<>(author, HttpStatus.OK);
         }
@@ -46,14 +46,14 @@ private BookService bookService;
     }
 
     @GetMapping("/author")
-    public ResponseEntity<List<Author>> getAllAuthors() {
-        List<Author> authors = authorService.getAllAuthors();
+    public ResponseEntity<List<Haribaskar_Author>> getAllAuthors() {
+        List<Haribaskar_Author> authors = authorService.getAllAuthors();
         return new ResponseEntity<>(authors, HttpStatus.OK);
     }
 
     @PutMapping("/author/{authorId}")
-    public ResponseEntity<Author> updateAuthor(@PathVariable Long authorId, @RequestBody Author author) {
-        Author updatedAuthor = authorService.updateAuthor(authorId, author);
+    public ResponseEntity<Haribaskar_Author> updateAuthor(@PathVariable Long authorId, @RequestBody Haribaskar_Author author) {
+        Haribaskar_Author updatedAuthor = authorService.updateAuthor(authorId, author);
         if (updatedAuthor != null) {
             return new ResponseEntity<>(updatedAuthor, HttpStatus.OK);
         }

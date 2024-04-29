@@ -1,32 +1,32 @@
-package com.example.q1.service;
+package com.example.haribaskarcw1.Haribaskar_service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.q1.model.Author;
-import com.example.q1.repository.AuthorRepository;
+import com.example.haribaskarcw1.Haribaskar_model.Haribaskar_Author;
+import com.example.haribaskarcw1.Haribaskar_repository.Haribaskar_AuthorRepository;
 
 @Service
-public class AuthorService {
+public class Haribaskar_AuthorService {
     @Autowired
-    private AuthorRepository authorRepository;
+    private Haribaskar_AuthorRepository authorRepository;
 
-    public Author saveAuthor(Author author) {
+    public Haribaskar_Author saveAuthor(Haribaskar_Author author) {
         return authorRepository.save(author);
     }
 
-    public Author getAuthorById(Long id) {
+    public Haribaskar_Author getAuthorById(Long id) {
         return authorRepository.findById(id).orElse(null);
     }
 
-    public List<Author> getAllAuthors() {
+    public List<Haribaskar_Author> getAllAuthors() {
         return authorRepository.findAll();
     }
 
-    public Author updateAuthor(Long id, Author author) {
-        Author existingAuthor = authorRepository.findById(id).orElse(null);
+    public Haribaskar_Author updateAuthor(Long id, Haribaskar_Author author) {
+        Haribaskar_Author existingAuthor = authorRepository.findById(id).orElse(null);
         if (existingAuthor != null) {
             existingAuthor.setEmail(author.getEmail());
             existingAuthor.setPhoneNumber(author.getPhoneNumber());
